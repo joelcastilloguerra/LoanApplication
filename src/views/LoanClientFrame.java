@@ -5,16 +5,11 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
-import java.util.Properties;
+import java.nio.charset.Charset;
+import java.util.Random;
 
 import javax.jms.*;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,9 +20,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import connection.JMSConnector;
 import messaging.requestreply.RequestReply;
+import model.bank.BankInterestReply;
 import model.loan.*;
+import serialisation.Deserialize;
 
 public class LoanClientFrame extends JFrame {
 
@@ -49,6 +46,11 @@ public class LoanClientFrame extends JFrame {
 	private Session session;
 	private Destination sendDestination;
 	private MessageProducer producer;
+
+	private MessageConsumer consumer;
+	private serialisation.Deserialize deserializer;
+
+	private connection.JMSConnector<LoanRequest> jmsConnector;
 
 	/**
 	 * Create the frame.
@@ -118,60 +120,29 @@ public class LoanClientFrame extends JFrame {
 		gbc_tfTime.gridy = 2;
 		contentPane.add(tfTime, gbc_tfTime);
 		tfTime.setColumns(10);
-		
+
+		jmsConnector = new JMSConnector<>();
+
 		JButton btnQueue = new JButton("send model.loan request");
 		btnQueue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int ssn = Integer.parseInt(tfSSN.getText());
 				int amount = Integer.parseInt(tfAmount.getText());
 				int time = Integer.parseInt(tfTime.getText());
-				String serializedObject = null;
 				
 				LoanRequest request = new LoanRequest(ssn,amount,time);
+
+				//Make random String
+				byte[] array = new byte[15]; // length is bounded by 15
+				new Random().nextBytes(array);
+				String generatedString = new String(array, Charset.forName("UTF-8"));
+				request.setCid(generatedString);
 				listModel.addElement( new RequestReply<LoanRequest,LoanReply>(request, null));
 
-				//
+				//Sending the message
 
-				try {
-					Properties props = new Properties();
-					props.setProperty(Context.INITIAL_CONTEXT_FACTORY,					                  "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-					props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
+				jmsConnector.sendMessage("loanBroker", request);
 
-					// connect to the Destination called “myFirstChannel”
-					// queue or topic: “queue.myFirstDestination” or “topic.myFirstDestination”
-					props.put(("queue.myFirstDestination"), "myFirstDestination");
-
-					Context jndiContext = new InitialContext(props);
-					ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext
-							.lookup("ConnectionFactory");
-					connection = connectionFactory.createConnection();
-					session = ((javax.jms.Connection) connection).createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-					// connect to the sender destination
-					sendDestination = (Destination) jndiContext.lookup("myFirstDestination");
-					producer = session.createProducer(sendDestination);
-
-
-
-					// serialize the LoanReply class
-					try {
-						ByteArrayOutputStream bo = new ByteArrayOutputStream();
-						ObjectOutputStream so = new ObjectOutputStream(bo);
-						so.writeObject(request);
-						so.flush();
-						serializedObject = new String(Base64.encode(bo.toByteArray()));
-					}
-					catch (Exception e) {
-						e.printStackTrace();
-					}
-					// create a text message
-					Message msg = session.createTextMessage(serializedObject);
-					// send the message
-					producer.send(msg);
-
-				} catch (NamingException | JMSException e) {
-					e.printStackTrace();
-				}
 
 			}
 		});
@@ -191,7 +162,10 @@ public class LoanClientFrame extends JFrame {
 		contentPane.add(scrollPane, gbc_scrollPane);
 		
 		requestReplyList = new JList<RequestReply<LoanRequest,LoanReply>>(listModel);
-		scrollPane.setViewportView(requestReplyList);	
+		scrollPane.setViewportView(requestReplyList);
+
+		deserializer = new Deserialize();
+		getLoanResponse();
        
 	}
 	
@@ -212,6 +186,57 @@ public class LoanClientFrame extends JFrame {
      
      return null;
    }
+
+	private int getLoanReplyIndex(LoanReply loanReply){
+
+   		for(int i = 0; i < listModel.getSize(); i++){
+
+   			LoanRequest loanRequest = listModel.getElementAt(i).getRequest();
+
+   			if(loanRequest.getCid().equals(loanReply.getCid())){
+
+   				return i;
+
+			}
+
+		}
+		return 1;
+	}
+
+   private void showRequestReply(LoanReply loanReply){
+
+   		int index = getLoanReplyIndex(loanReply);
+   		listModel.getElementAt(index).setReply(loanReply);
+   		requestReplyList.repaint();
+
+   }
+
+	public void getLoanResponse(){
+
+		consumer = jmsConnector.receiveMessage("loanReply");
+
+		try {
+			consumer.setMessageListener(new MessageListener(){
+
+				@Override
+				public void onMessage(Message msg) {
+
+					// deserialize the object
+					try {
+						String messageText = ((TextMessage) msg).getText();
+						LoanReply obj = (LoanReply) deserializer.deserialize(messageText);
+						showRequestReply(obj);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+
+		} catch (JMSException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

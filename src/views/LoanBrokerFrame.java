@@ -4,15 +4,8 @@ import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.io.ByteArrayInputStream;
-import java.io.ObjectInputStream;
-import java.util.List;
-import java.util.Properties;
 
 import javax.jms.*;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -20,25 +13,27 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import connection.JMSConnector;
 import model.bank.*;
+import model.loan.LoanReply;
 import model.loan.LoanRequest;
+import model.bank.BankInterestRequest;
+import serialisation.Deserialize;
 
 
 public class LoanBrokerFrame extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private DefaultListModel<JListLine> listModel = new DefaultListModel<JListLine>();
 	private JList<JListLine> list;
-
-	Connection connection;
-	Session session;
-	javax.jms.Destination receiveDestination;
-	MessageConsumer consumer;
+	private connection.JMSConnector<BankInterestRequest> jmsConnectorBankInterestRequest;
+	private connection.JMSConnector<LoanReply> jmsConnectorLoanReply;
+	private serialisation.Deserialize deserializer;
+	private MessageConsumer consumer;
 
 
 	public static void main(String[] args) {
@@ -71,7 +66,7 @@ public class LoanBrokerFrame extends JFrame {
 		gbl_contentPane.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 7;
@@ -80,75 +75,92 @@ public class LoanBrokerFrame extends JFrame {
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 0;
 		contentPane.add(scrollPane, gbc_scrollPane);
-		
+
 		list = new JList<JListLine>(listModel);
 		scrollPane.setViewportView(list);
 
-		this.getLoanMessage();
+		jmsConnectorBankInterestRequest = new JMSConnector();
+		jmsConnectorLoanReply = new JMSConnector<>();
+		deserializer = new Deserialize();
+
+		this.getLoanRequest();
 	}
-	
-	 private JListLine getRequestReply(LoanRequest request){    
-	     
-	     for (int i = 0; i < listModel.getSize(); i++){
-	    	 JListLine rr =listModel.get(i);
-	    	 if (rr.getLoanRequest() == request){
-	    		 return rr;
-	    	 }
-	     }
-	     
-	     return null;
-	   }
-	
-	public void add(LoanRequest loanRequest){		
-		listModel.addElement(new JListLine(loanRequest));		
+
+	 private JListLine getRequestReply(LoanRequest request) {
+
+		 for (int i = 0; i < listModel.getSize(); i++) {
+			 JListLine rr = listModel.get(i);
+			 if (rr.getLoanRequest() == request) {
+				 return rr;
+			 }
+		 }
+
+		 return null;
+	 }
+
+	public void add(LoanRequest loanRequest){
+		listModel.addElement(new JListLine(loanRequest));
 	}
-	
+
 
 	public void add(LoanRequest loanRequest,BankInterestRequest bankRequest){
 		JListLine rr = getRequestReply(loanRequest);
 		if (rr!= null && bankRequest != null){
 			rr.setBankRequest(bankRequest);
             list.repaint();
-		}		
+		}
 	}
-	
+
 	public void add(LoanRequest loanRequest, BankInterestReply bankReply){
 		JListLine rr = getRequestReply(loanRequest);
 		if (rr!= null && bankReply != null){
-			rr.setBankReply(bankReply);;
+			rr.setBankReply(bankReply);
             list.repaint();
-		}		
+		}
 	}
 
-	public void getLoanMessage(){
+	public LoanRequest getLoanRequest(BankInterestReply bankInterestReply){
 
-		try {
-			Properties props = new Properties();
-			props.setProperty(Context.INITIAL_CONTEXT_FACTORY,
-					"org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-			props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
-
-			props.put(("queue.myFirstDestination"), " myFirstDestination");
-
-			Context jndiContext = new InitialContext(props);
-			ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext
-					.lookup("ConnectionFactory");
-			connection = connectionFactory.createConnection();
-			session = ((javax.jms.Connection) connection).createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-			// connect to the receiver destination
-			receiveDestination = (Destination) jndiContext.lookup("myFirstDestination");
-			consumer = session.createConsumer(receiveDestination);
-
-			connection.start(); // this is needed to start receiving messages
-
-		} catch (NamingException | JMSException e) {
-			e.printStackTrace();
+		for (int i = 0; i < listModel.getSize(); i++) {
+			JListLine rr = listModel.get(i);
+			if (rr.getLoanRequest().getCid().equals(bankInterestReply.getCid())) {
+				return rr.getLoanRequest();
+			}
 		}
+		return null;
+	}
 
+	public void sendBankInterestRequest(LoanRequest loanRequest){
+
+		BankInterestRequest bankInterestRequest = new BankInterestRequest(loanRequest.getAmount(), loanRequest.getTime());
+
+		bankInterestRequest.setCid(loanRequest.getCid());
+		add(loanRequest);
+		add(loanRequest, bankInterestRequest);
+		//Sending the message
+		jmsConnectorBankInterestRequest.sendMessage("bankRequest", bankInterestRequest);
+
+	}
+
+	public void sendLoanReply(BankInterestReply bankInterestReply){
+
+		LoanRequest loanRequest = getLoanRequest(bankInterestReply);
+
+		add(loanRequest, bankInterestReply);
+
+		LoanReply loanReply = new LoanReply(bankInterestReply.getInterest(), bankInterestReply.getQuoteId(), bankInterestReply.getCid());
+
+		//Sending the message
+		jmsConnectorLoanReply.sendMessage("loanReply", loanReply);
+
+	}
+
+	public void getLoanRequest(){
+
+		consumer = jmsConnectorBankInterestRequest.receiveMessage("loanBroker");
 
 		try {
-			consumer.setMessageListener(new MessageListener() {
+			consumer.setMessageListener(new MessageListener(){
 
 				@Override
 				public void onMessage(Message msg) {
@@ -157,14 +169,27 @@ public class LoanBrokerFrame extends JFrame {
 					// deserialize the object
 					try {
 						String messageText = ((TextMessage) msg).getText();
-						byte b[] = Base64.decode(messageText.getBytes());
-						ByteArrayInputStream bi = new ByteArrayInputStream(b);
-						ObjectInputStream si = new ObjectInputStream(bi);
-						LoanRequest obj = (LoanRequest) si.readObject();
 
-						add(obj);
+
+						if(deserializer.deserialize(messageText) instanceof LoanRequest){
+
+							LoanRequest obj = (LoanRequest) deserializer.deserialize(messageText);
+							sendBankInterestRequest(obj);
+
+						}
+						else if(deserializer.deserialize(messageText) instanceof BankInterestReply){
+
+							BankInterestReply obj = (BankInterestReply) deserializer.deserialize(messageText);
+							add(new LoanRequest(),obj);
+							sendLoanReply(obj);
+							System.out.println(obj.toString());
+
+
+						}
+
+
 					} catch (Exception e) {
-						System.out.println(e);
+						e.printStackTrace();
 					}
 				}
 			});
@@ -172,7 +197,6 @@ public class LoanBrokerFrame extends JFrame {
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
-
 
 	}
 

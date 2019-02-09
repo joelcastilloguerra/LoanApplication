@@ -5,7 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.jms.*;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,8 +16,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import connection.JMSConnector;
 import model.bank.*;
 import messaging.requestreply.RequestReply;
+import model.bank.BankInterestReply;
+import serialisation.Deserialize;
 
 public class JMSBankFrame extends JFrame {
 
@@ -28,7 +31,9 @@ public class JMSBankFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField tfReply;
 	private DefaultListModel<RequestReply<BankInterestRequest, BankInterestReply>> listModel = new DefaultListModel<RequestReply<BankInterestRequest, BankInterestReply>>();
-	
+	private MessageConsumer consumer;
+	private connection.JMSConnector<BankInterestReply> jmsConnector;
+	private serialisation.Deserialize deserializer;
 	/**
 	 * Launch the application.
 	 */
@@ -101,7 +106,8 @@ public class JMSBankFrame extends JFrame {
 				if (rr!= null && reply != null){
 					rr.setReply(reply);
 	                list.repaint();
-					// todo: sent JMS message with the reply to Loan Broker
+
+	                sendBankInterestReply(listModel.getElementAt(list.getSelectedIndex()).getRequest(), listModel.getElementAt(list.getSelectedIndex()).getReply());
 				}
 			}
 		});
@@ -110,6 +116,46 @@ public class JMSBankFrame extends JFrame {
 		gbc_btnSendReply.gridx = 4;
 		gbc_btnSendReply.gridy = 1;
 		contentPane.add(btnSendReply, gbc_btnSendReply);
+
+		jmsConnector = new JMSConnector<>();
+		deserializer = new Deserialize();
+		getLoanRequest();
+	}
+
+	public void sendBankInterestReply(BankInterestRequest request, BankInterestReply reply){
+
+		reply.setCid(request.getCid());
+
+		//Sending the message
+		jmsConnector.sendMessage("loanBroker", reply);
+
+	}
+
+	public void getLoanRequest(){
+
+		consumer = jmsConnector.receiveMessage("bankRequest");
+
+		try {
+			consumer.setMessageListener(new MessageListener(){
+
+				@Override
+				public void onMessage(Message msg) {
+
+					// deserialize the object
+					try {
+						String messageText = ((TextMessage) msg).getText();
+						BankInterestRequest obj = (BankInterestRequest) deserializer.deserialize(messageText);
+						listModel.addElement(new RequestReply<>(obj, null));
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+				}
+			});
+
+		} catch (JMSException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

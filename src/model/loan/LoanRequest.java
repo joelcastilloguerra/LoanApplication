@@ -11,6 +11,7 @@ public class LoanRequest implements java.io.Serializable{
     private int ssn; // unique client number.
     private int amount; // the ammount to borrow
     private int time; // the time-span of the model.loan
+    private String cid;
 
     public LoanRequest() {
         super();
@@ -24,6 +25,26 @@ public class LoanRequest implements java.io.Serializable{
         this.ssn = ssn;
         this.amount = amount;
         this.time = time;
+    }
+
+    public LoanRequest(int ssn, int amount, int time, String cid) {
+        super();
+        this.ssn = ssn;
+        this.amount = amount;
+        this.time = time;
+        this.cid = cid;
+    }
+
+    public String getCid(){
+
+        return this.cid;
+
+    }
+
+    public void setCid(String cid){
+
+        this.cid = cid;
+
     }
 
     public int getSsn() {

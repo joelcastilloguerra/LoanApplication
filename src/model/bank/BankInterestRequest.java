@@ -5,10 +5,11 @@ package model.bank;
  * This class stores all information about an request from a model.bank to offer
  * a model.loan to a specific client.
  */
-public class BankInterestRequest {
+public class BankInterestRequest implements java.io.Serializable{
 
     private int amount; // the requested model.loan amount
     private int time; // the requested model.loan period
+    private String cid;
 
     public BankInterestRequest() {
         super();
@@ -20,6 +21,25 @@ public class BankInterestRequest {
         super();
         this.amount = amount;
         this.time = time;
+    }
+
+    public BankInterestRequest(int amount, int time, String cid) {
+        super();
+        this.amount = amount;
+        this.time = time;
+        this.cid = cid;
+    }
+
+    public String getCid(){
+
+        return this.cid;
+
+    }
+
+    public void setCid(String cid){
+
+        this.cid = cid;
+
     }
 
     public int getAmount() {
