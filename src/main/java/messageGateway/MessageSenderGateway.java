@@ -1,15 +1,14 @@
 package messageGateway;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import com.owlike.genson.Genson;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 public class MessageSenderGateway<T> {
+
+    private Genson genson;
 
     public void sendMessage(String subject, T object){
 
@@ -18,8 +17,10 @@ public class MessageSenderGateway<T> {
             String url = ActiveMQConnection.DEFAULT_BROKER_URL;
             ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
             Connection connection = connectionFactory.createConnection();
-            String serializedObject = null;
 
+            genson = new Genson();
+            String serializedObject = genson.serialize(object);
+            serializedObject += "!" + object.getClass().getName();
             connection.start();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
@@ -29,19 +30,13 @@ public class MessageSenderGateway<T> {
             //MessageProducer is used to send messages
             MessageProducer producer = session.createProducer(destination);
 
-            // serialize and send the given class
-            ByteArrayOutputStream bo = new ByteArrayOutputStream();
-            ObjectOutputStream so = new ObjectOutputStream(bo);
-            so.writeObject(object);
-            so.flush();
-            serializedObject = Base64.encode(bo.toByteArray());
             // create a text message
             Message msg = session.createTextMessage(serializedObject);
             // send the message
             producer.send(msg);
 
         }
-        catch (JMSException | IOException e){
+        catch (JMSException e){
             e.printStackTrace();
         }
 

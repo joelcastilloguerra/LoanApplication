@@ -21,7 +21,6 @@ import messageGateway.MessageSenderGateway;
 import model.bank.*;
 import messaging.requestreply.RequestReply;
 import model.bank.BankInterestReply;
-import serialisation.Deserialize;
 
 public class JMSBankFrame extends JFrame {
 

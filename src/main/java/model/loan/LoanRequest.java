@@ -14,10 +14,6 @@ public class LoanRequest implements java.io.Serializable{
     private String cid;
 
     public LoanRequest() {
-        super();
-        this.ssn = 0;
-        this.amount = 0;
-        this.time = 0;
     }
 
     public LoanRequest(int ssn, int amount, int time) {

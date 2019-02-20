@@ -2,68 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c32f13c-487a-4825-9e47-43e50bcb3e58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_net_commons_net_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_core_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_kahadb_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_protobuf_activemq_protobuf_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_j2ee_management_1_1_spec_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jms_1_1_spec_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtbuf_hawtbuf_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_transport_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_mqtt_client_mqtt_client_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jasypt_jasypt_1_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_asm_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AppGateway/BankAppGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AppGateway/LoanClientAppGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/messaging/requestreply/RequestReply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/bank/BankInterestReply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/bank/BankInterestRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/loan/LoanReply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/serialisation/Deserialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/JListLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_owlike_genson_1_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoanApplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/connection/JMSConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/JMSBankFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanBrokerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanBrokerFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanBrokerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanBrokerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanClientFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanClientFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanClientFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoanApplication/views/LoanClientFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/JMSConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/requestreply/RequestReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/bank/BankInterestReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/bank/BankInterestRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/loan/LoanReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/loan/LoanRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serialisation/Deserialize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/JListLine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/JMSBankFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/LoanBrokerFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/LoanClientFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/serialisation/Deserialize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messageGateway/MessageSenderGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messageGateway/MessageSenderGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/serialisation/Deserialize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/JMSBankFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,21 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2526#2580#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="211">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -100,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +58,79 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1383#2371#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanClientAppGateway.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-16">
+              <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-271">
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/loan/LoanReply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/bank/BankInterestReply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/bank/BankInterestRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+            <state relative-caret-position="-62">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -133,6 +150,8 @@
       <find>send</find>
       <find>loanbr</find>
       <find>overri</find>
+      <find>msg</find>
+      <find>message</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,8 +164,6 @@
         <option value="$PROJECT_DIR$/src/views/JMSBankFrame.java" />
         <option value="$PROJECT_DIR$/src/messageGateway/MessageReceiverGateway.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppGateway/Gateway.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/loan/LoanReply.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppGateway/LoanBrokerAppGateway.java" />
@@ -154,10 +171,13 @@
         <option value="$PROJECT_DIR$/src/main/java/model/bank/BankInterestReply.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGatewa.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppGateway/LoanClientAppGateway.java" />
+        <option value="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java" />
       </list>
     </option>
   </component>
@@ -240,7 +260,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="serialisation" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LoanApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LoanApplication" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="bank" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LoanApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LoanApplication" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="loan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LoanApplication" type="b2602c69:ProjectViewProjectNode" />
@@ -261,8 +299,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550655140135" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550665240069" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JEA/KwetterApp" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -321,7 +359,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All Apps" type="Multirun" factoryName="Multirun" separateTabs="false" startOneByOne="true" markFailedProcess="true" hideSuccessProcess="true" delayTime="0">
+    <configuration name="All Apps" type="Multirun" factoryName="Multirun" separateTabs="false" startOneByOne="false" markFailedProcess="true" hideSuccessProcess="false" delayTime="0">
       <runConfiguration name="LoanClientFrame" type="Application" />
       <runConfiguration name="LoanBrokerFrame" type="Application" />
       <runConfiguration name="JMSBankFrame" type="Application" />
@@ -358,16 +396,15 @@
       <workItem from="1550487021287" duration="1503000" />
       <workItem from="1550564202139" duration="16646000" />
       <workItem from="1550650409007" duration="106000" />
-      <workItem from="1550654378710" duration="748000" />
+      <workItem from="1550654378710" duration="9009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24161000" />
+    <option name="totallyTimeSpent" value="32422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24832214" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -379,7 +416,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" content_ui="combo" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39660057" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38668555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -389,7 +426,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -409,7 +446,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java</url>
-          <line>61</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
@@ -486,6 +523,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/BankAppGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="18" column="77" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-core/5.7.0/activemq-core-5.7.0.jar!/org/apache/activemq/ActiveMQSessionExecutor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-core/5.7.0/activemq-core-5.7.0.jar!/org/apache/activemq/thread/PooledTaskRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -493,38 +554,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-core/5.7.0/activemq-core-5.7.0.jar!/org/apache/activemq/ActiveMQSessionExecutor.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="125">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2526#2580#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-core/5.7.0/activemq-core-5.7.0.jar!/org/apache/activemq/ActiveMQMessageConsumer.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
+        <state relative-caret-position="211">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanClientAppGateway.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="75" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/BankAppGateway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="18" column="77" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="77" />
+        <state relative-caret-position="-62">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -544,59 +605,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/loan/LoanReply.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="340">
           <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-core/5.7.0/activemq-core-5.7.0.jar!/org/apache/activemq/ActiveMQMessageConsumer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="118">
+          <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/loan/LoanRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanClientAppGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messageGateway/MessageReceiverGateway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+        <state relative-caret-position="208">
+          <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2526#2580#0" expanded="true" />
+            <element signature="e#1383#2371#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
           </folding>
         </state>
       </provider>

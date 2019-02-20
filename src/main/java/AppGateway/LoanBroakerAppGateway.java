@@ -6,7 +6,6 @@ import model.bank.BankInterestReply;
 import model.bank.BankInterestRequest;
 import model.loan.LoanReply;
 import model.loan.LoanRequest;
-import serialisation.Deserialize;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -17,13 +16,11 @@ public class LoanBroakerAppGateway {
     private MessageSenderGateway<BankInterestRequest> bankInterestRequestMessageSenderGateway;
     private MessageSenderGateway<LoanReply> loanReplyMessageSenderGateway;
     private MessageReceiverGateway messageReceiverGateway;
-    private serialisation.Deserialize deserializer;
 
     public LoanBroakerAppGateway() {
 
         this.bankInterestRequestMessageSenderGateway = new MessageSenderGateway<>();
         this.loanReplyMessageSenderGateway = new MessageSenderGateway<>();
-        this.deserializer = new Deserialize();
         this.messageReceiverGateway = new MessageReceiverGateway("loanbroker"){
 
             @Override

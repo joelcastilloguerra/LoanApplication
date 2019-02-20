@@ -20,7 +20,6 @@ import model.bank.*;
 import model.loan.LoanReply;
 import model.loan.LoanRequest;
 import model.bank.BankInterestRequest;
-import serialisation.Deserialize;
 
 
 public class LoanBrokerFrame extends JFrame {

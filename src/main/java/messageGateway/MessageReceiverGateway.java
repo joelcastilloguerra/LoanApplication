@@ -1,28 +1,21 @@
 package messageGateway;
 
-import messaging.requestreply.RequestReply;
+import com.owlike.genson.Genson;
+import model.loan.LoanRequest;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.command.ActiveMQMessage;
-import serialisation.Deserialize;
 
 import javax.jms.*;
 
 public class MessageReceiverGateway {
 
     private MessageConsumer consumer;
-    private serialisation.Deserialize deserializer;
-
-    public MessageReceiverGateway() {
-
-        deserializer = new Deserialize();
-
-    }
+    private Genson genson;
 
     public MessageReceiverGateway(String subject) {
 
         receiveMessage(subject);
-        deserializer = new Deserialize();
+        genson = new Genson();
 
     }
 
@@ -57,12 +50,18 @@ public class MessageReceiverGateway {
 
                     try {
                         String messageText = ((TextMessage) msg).getText();
-                        Object deserializedObject = deserializer.deserialize(messageText);
+
+                        //Deserialize
+                        Class cls = Class.forName(messageText.substring(messageText.lastIndexOf("!") + 1));
+                        String jsonObject = messageText.substring(0, messageText.indexOf("!"));
+                        Object deserializedObject = genson.deserialize(jsonObject,cls);
+
                         messageReceive(deserializedObject);
                     } catch (JMSException e) {
                         e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
                     }
-
 
                 }
 
