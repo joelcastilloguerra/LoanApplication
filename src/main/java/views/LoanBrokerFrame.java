@@ -81,7 +81,6 @@ public class LoanBrokerFrame extends JFrame {
 			@Override
 			public void onBankResponseArrived(BankInterestReply reply){
 
-
 				add(getLoanRequest(reply), reply);
 
 			}

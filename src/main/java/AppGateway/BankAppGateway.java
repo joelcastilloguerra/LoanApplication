@@ -2,21 +2,19 @@ package AppGateway;
 
 import messageGateway.MessageReceiverGateway;
 import messageGateway.MessageSenderGateway;
-import messaging.requestreply.RequestReply;
 import model.bank.BankInterestReply;
 import model.bank.BankInterestRequest;
-import model.loan.LoanReply;
-import model.loan.LoanRequest;
 
-public class BankAppGateway {
+abstract public class BankAppGateway {
 
     private MessageSenderGateway<BankInterestReply> messageSenderGateway;
     private MessageReceiverGateway messageReceiverGateway;
 
-    public BankAppGateway() {
+    protected BankAppGateway(String receiverQue) {
 
         this.messageSenderGateway = new MessageSenderGateway<>();
-        this.messageReceiverGateway = new MessageReceiverGateway("bankRequest"){
+
+        this.messageReceiverGateway = new MessageReceiverGateway(receiverQue){
 
             @Override
             public void messageReceive(Object bankRequest){
@@ -35,9 +33,7 @@ public class BankAppGateway {
 
     }
 
-    public void onBankRequestArrived(BankInterestRequest request){
+    abstract public void onBankRequestArrived(BankInterestRequest request);
 
-
-    }
 
 }

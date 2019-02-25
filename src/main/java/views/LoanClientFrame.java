@@ -122,6 +122,7 @@ public class LoanClientFrame extends JFrame {
 				byte[] array = new byte[15]; // length is bounded by 15
 				new Random().nextBytes(array);
 				String generatedString = new String(array, Charset.forName("UTF-8"));
+
 				request.setCid(generatedString);
 				listModel.addElement( new RequestReply<LoanRequest,LoanReply>(request, null));
 

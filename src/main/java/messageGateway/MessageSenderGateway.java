@@ -32,6 +32,7 @@ public class MessageSenderGateway<T> {
 
             // create a text message
             Message msg = session.createTextMessage(serializedObject);
+            
             // send the message
             producer.send(msg);
 
