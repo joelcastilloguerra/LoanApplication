@@ -1,4 +1,4 @@
-package views;
+package views.bankFrame;
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -16,8 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import AppGateway.BankAppGateway;
-import messageGateway.MessageReceiverGateway;
-import messageGateway.MessageSenderGateway;
 import model.bank.*;
 import messaging.requestreply.RequestReply;
 import model.bank.BankInterestReply;
@@ -117,7 +115,7 @@ public class JMSBankFrame extends JFrame {
 		gbc_btnSendReply.gridy = 1;
 		contentPane.add(btnSendReply, gbc_btnSendReply);
 
-		bankAppGateway = new BankAppGateway(){
+		bankAppGateway = new BankAppGateway("ABN_AMRO"){
 
 			@Override
 			public void onBankRequestArrived(BankInterestRequest request){

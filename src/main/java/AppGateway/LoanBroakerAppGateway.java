@@ -162,9 +162,11 @@ public class LoanBroakerAppGateway {
                 //Subtract one from the count
                 bestBankReply.setCount(bestBankReply.getCount() - 1);
 
+                return false;
+
             }
 
-            return false;
+
 
         }
 

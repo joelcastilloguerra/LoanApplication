@@ -1,4 +1,4 @@
-package views;
+package views.bankFrame;
 
 import AppGateway.BankAppGateway;
 import messaging.requestreply.RequestReply;
@@ -20,8 +20,16 @@ public class RaboBankFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField tfReply;
 	private DefaultListModel<RequestReply<BankInterestRequest, BankInterestReply>> listModel = new DefaultListModel<RequestReply<BankInterestRequest, BankInterestReply>>();
+	private BankAppGateway bankAppGateway = new BankAppGateway("RABO_BANK"){
 
-	private BankAppGateway bankAppGateway;
+		@Override
+		public void onBankRequestArrived(BankInterestRequest request){
+
+			listModel.addElement(new RequestReply<>(request, new BankInterestReply()));
+
+		}
+
+	};
 	/**
 	 * Launch the application.
 	 */
@@ -42,6 +50,7 @@ public class RaboBankFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public RaboBankFrame() {
+
 		setTitle("Rabo bank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -105,17 +114,6 @@ public class RaboBankFrame extends JFrame {
 		gbc_btnSendReply.gridx = 4;
 		gbc_btnSendReply.gridy = 1;
 		contentPane.add(btnSendReply, gbc_btnSendReply);
-
-		bankAppGateway = new BankAppGateway(){
-
-			@Override
-			public void onBankRequestArrived(BankInterestRequest request){
-
-				listModel.addElement(new RequestReply<>(request, new BankInterestReply()));
-
-			}
-
-		};
 
 	}
 

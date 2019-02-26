@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c32f13c-487a-4825-9e47-43e50bcb3e58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_jeval_jeval_0_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/BestBankReply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/INGBankFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/RaboBankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AppGateway/BankAppGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppGateway/BankAppGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messageGateway/MessageSenderGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/JMSBankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/JMSBankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/LoanBrokerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/LoanClientFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/BankAppGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/BankAppGateway$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/BankAppGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/BankAppGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AppGateway/LoanBroakerAppGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messageGateway/MessageReceiverGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/JMSBankFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/LoanBrokerFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/bankFrame/INGBankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/INGBankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/bankFrame/JMSBankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/JMSBankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/bankFrame/RaboBankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/bankFrame/RaboBankFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="162" column="69" selection-start-line="162" selection-start-column="69" selection-end-line="162" selection-end-column="69" />
+            <state relative-caret-position="296">
+              <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -346,7 +325,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551113270746" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551162788000" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -498,12 +477,12 @@
       <workItem from="1550736805362" duration="8398000" />
       <workItem from="1550746026599" duration="8234000" />
       <workItem from="1551091326244" duration="5569000" />
-      <workItem from="1551106546170" duration="5861000" />
+      <workItem from="1551106546170" duration="6875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61249000" />
+    <option name="totallyTimeSpent" value="62263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -807,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AppGateway/LoanBroakerAppGateway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="162" column="69" selection-start-line="162" selection-start-column="69" selection-end-line="162" selection-end-column="69" />
+        <state relative-caret-position="296">
+          <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

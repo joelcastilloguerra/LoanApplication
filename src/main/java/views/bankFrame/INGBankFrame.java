@@ -1,4 +1,4 @@
-package views;
+package views.bankFrame;
 
 import AppGateway.BankAppGateway;
 import messaging.requestreply.RequestReply;
@@ -41,7 +41,19 @@ public class INGBankFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public INGBankFrame() {
+	private INGBankFrame() {
+
+		bankAppGateway = new BankAppGateway("ING"){
+
+			@Override
+			public void onBankRequestArrived(BankInterestRequest request){
+
+				listModel.addElement(new RequestReply<>(request, new BankInterestReply()));
+
+			}
+
+		};
+
 		setTitle("ING");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -105,17 +117,6 @@ public class INGBankFrame extends JFrame {
 		gbc_btnSendReply.gridx = 4;
 		gbc_btnSendReply.gridy = 1;
 		contentPane.add(btnSendReply, gbc_btnSendReply);
-
-		bankAppGateway = new BankAppGateway(){
-
-			@Override
-			public void onBankRequestArrived(BankInterestRequest request){
-
-				listModel.addElement(new RequestReply<>(request, new BankInterestReply()));
-
-			}
-
-		};
 
 	}
 
